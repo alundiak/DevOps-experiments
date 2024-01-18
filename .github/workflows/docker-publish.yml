@@ -37,5 +37,5 @@ jobs:
           push: true
           platforms: linux/amd64,linux/arm64 # Add more platforms if needed
           tags: |
-            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/sum-nodejs-image:latest
-            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/sum-nodejs-image:${{ github.sha }}
+            ${{ env.REGISTRY }}/alundiak/devops-experiments/sum-nodejs-image:latest
+            ${{ env.REGISTRY }}/alundiak/devops-experiments/sum-nodejs-image:${{ github.sha }}
