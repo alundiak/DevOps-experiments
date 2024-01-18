@@ -5,6 +5,12 @@ on:
     branches:
       - main
 
+env:
+  # Use docker.io for Docker Hub if empty
+  REGISTRY: ghcr.io
+  # github.repository as <account>/<repo>
+  IMAGE_NAME: ${{ github.repository }}
+
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
@@ -31,5 +37,5 @@ jobs:
           push: true
           platforms: linux/amd64,linux/arm64 # Add more platforms if needed
           tags: |
-            ghcr.io/${{ github.repository }}/sum-nodejs-image:latest
-            ghcr.io/${{ github.repository }}/sum-nodejs-image:${{ github.sha }}
+            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/sum-nodejs-image:latest
+            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/sum-nodejs-image:${{ github.sha }}
