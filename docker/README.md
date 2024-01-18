@@ -6,7 +6,25 @@ Docker experiments
 - `docker build -t my-nodejs-image:latest --file Dockerfile .`
 - `docker run --name=MyNodeJsContainer -p 3000:3000 -d my-nodejs-image:latest`
 
+
+## Before you continue:
+
+- DO NOT mess up with official DockerHub account!
+- Once you have logged in to both Docker Hub and GitHub Container Registry, Docker will securely store the credentials in its configuration file.
+
+
+```sh
+docker pull your-dockerhub-username/your-image-name
+docker pull ghcr.io/your-github-username/your-image-name
+```
+
+
 ## GitHub Actions deploy Docker image on GitHub registry
+
+To be able to `pull` need to `docker login ghcr.io`.
+
+This command will prompt you to enter your GitHub username and a **personal access token** with the `read:packages` scope.
+
 
 ```sh
 Run docker/login-action@343***6df046d
@@ -29,20 +47,17 @@ So I assume Docker image will be available as `alundiak/DevOps-experiments` =>
 docker pull ghcr.io/alundiak/DevOps-experiments
 ```
 
-But to be able to do that need to `docker login ghcr.io`.
+> Pushing signature to: ghcr.io/alundiak/devops-experiments
 
-This command will prompt you to enter your GitHub username and a personal access token with the `read:packages` scope.
+So I assume it works also when all in lowercase?
 
-Notes:
 
-- DO NOT mess up with official DockerHub account!
-- Once you have logged in to both Docker Hub and GitHub Container Registry, Docker will securely store the credentials in its configuration file.
-
+By default logic of YAML file GitHuba Actions deploy Package for later usage this way:
 
 ```sh
-docker pull your-dockerhub-username/your-image-name
-docker pull ghcr.io/your-github-username/your-image-name
+docker pull ghcr.io/alundiak/devops-experiments:sha256-f5e1d13****d2de0b.sig
 ```
+
 
 
 ## Other Docker commands
