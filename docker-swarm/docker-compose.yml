@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  web:
+  my-nginx-server-web-service:
     image: nginx:latest
     deploy:
       replicas: 3

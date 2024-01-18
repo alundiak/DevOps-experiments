@@ -96,19 +96,6 @@ or
 curl -H "Authorization: Bearer YOUR_GITHUB_TOKEN" https://ghcr.io/v2/alundiak/devops-experiments/tags/list | jq .
 ```
 
-### How to use my deployed image?
-
-
-- `cd my-custom-image-using-another-image`
-- `docker build -t my-custom-image-nodejs-wrapper .`
-- `docker run --name=MyNodeJsWrapperContainer -p 3001:3001 -d my-custom-image-nodejs-wrapper`
-
-
-### Platform related
-
-- `docker pull --platform linux/arm64 ghcr.io/alundiak/devops-experiments:main`
-- `FROM --platform=linux/arm64 ghcr.io/alundiak/devops-experiments:main` in Dockerfile
-
 ### Issue
 
 Jan-18-2024 and I can't fix it or setup YAML file in the way to fix it:
@@ -168,15 +155,6 @@ docker save my-nodejs-image -o my-image.tar
 # Create real tar file
 docker save ghcr.io/alundiak/devops-experiments -o my-ghcr-image.tar
 docker save postgres -o my-image.tar
-
-docker service rollback
-
-docker swarm init
-docker swarm join --token SWxxxKN-1-5nw**uefc 1x2.1x8.65.3:2xx7
-docker swarm leave # to leave the swarm and join another one.
-docker swarm ca # show certificate
-docker stack ls        # List stacks
-docker stack ps <stack-name>    # List services in the stack
 
 docker history postgres
 # LATEST layers from top, OLDEST layers at the bottom
