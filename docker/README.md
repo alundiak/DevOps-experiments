@@ -109,6 +109,22 @@ curl -H "Authorization: Bearer YOUR_GITHUB_TOKEN" https://ghcr.io/v2/alundiak/de
 - `docker pull --platform linux/arm64 ghcr.io/alundiak/devops-experiments:main`
 - `FROM --platform=linux/arm64 ghcr.io/alundiak/devops-experiments:main` in Dockerfile
 
+### Issue
+
+Jan-18-2024 and I can't fix it or setup YAML file in the way to fix it:
+
+```
+main: Pulling from alundiak/devops-experiments
+no matching manifest for linux/arm64 in the manifest list entries
+```
+
+There is also NO tag `latest`:
+
+```
+Using default tag: latest
+Error response from daemon: manifest unknown
+```
+
 
 
 
