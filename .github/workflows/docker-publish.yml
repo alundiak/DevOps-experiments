@@ -43,9 +43,13 @@ jobs:
         id: set_tags
         # run: echo "::set-output name=tags::$(date +'%Y%m%d%H%M%S')"
         #   echo "TAGS=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
+        # run: |
+        #   TAGS=$(date +'%Y%m%d%H%M%S')
+        #   echo "TAGS=${TAGS}" >> $GITHUB_ENV
         run: |
           TAGS=$(date +'%Y%m%d%H%M%S')
           echo "TAGS=${TAGS}" >> $GITHUB_ENV
+          echo "::set-output name=tags::${TAGS}"
 
       # Install the cosign tool except on PR
       # https://github.com/sigstore/cosign-installer
@@ -87,7 +91,8 @@ jobs:
         with:
           context: .
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta.outputs.tags }}
+          # tags: ${{ steps.meta.outputs.tags }}
+          tags: ${{ steps.set_tags.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
@@ -101,7 +106,8 @@ jobs:
         if: ${{ github.event_name != 'pull_request' }}
         env:
           # https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-an-intermediate-environment-variable
-          TAGS: ${{ steps.meta.outputs.tags }}
+          # TAGS: ${{ steps.meta.outputs.tags }}
+          TAGS: ${{ steps.set_tags.outputs.tags }}
           DIGEST: ${{ steps.build-and-push.outputs.digest }}
         # This step uses the identity token to provision an ephemeral certificate
         # against the sigstore community Fulcio instance.
