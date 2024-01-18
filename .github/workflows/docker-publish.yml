@@ -24,6 +24,10 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        arch: [x64, arm64]
     permissions:
       contents: read
       packages: write
@@ -37,7 +41,9 @@ jobs:
 
       - name: Set Tags
         id: set_tags
-        run: echo "::set-output name=tags::$(date +'%Y%m%d%H%M%S')"
+        # run: echo "::set-output name=tags::$(date +'%Y%m%d%H%M%S')"
+        run: |
+          echo "TAGS=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
 
       # Install the cosign tool except on PR
       # https://github.com/sigstore/cosign-installer
