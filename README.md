@@ -1,6 +1,7 @@
-# DevOps-experiments
+DevOp Experiments
+===
 
-Various DevOps code and info needed to grasp main DevOps techniques
+Various DevOps related code experiments and info needed to grasp main DevOps techniques.
 
 ## Docker
 
