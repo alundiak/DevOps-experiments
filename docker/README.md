@@ -1,6 +1,11 @@
 Docker experiments
 ===
 
+Try:
+
+- [Multi-stage builds](https://docs.docker.com/build/building/multi-stage/)
+- [Understand permission requirements for Docker Desktop on Mac](https://docs.docker.com/desktop/mac/permission-requirements/)
+
 ## Basic Docker image and container setup
 
 - `docker build -t my-nodejs-image:latest --file Dockerfile .`
@@ -20,6 +25,8 @@ docker pull ghcr.io/your-github-username/your-image-name
 
 
 ## GitHub Actions deploy Docker image on GitHub registry
+
+Read => [Workflow commands for GitHub Actions](https://docs.github.com/en/enterprise-cloud@latest/actions/using-workflows/workflow-commands-for-github-actions)
 
 To be able to `pull` need to `docker login ghcr.io`.
 
@@ -58,6 +65,20 @@ By default logic of YAML file GitHuba Actions deploy Package for later usage thi
 docker pull ghcr.io/alundiak/devops-experiments:sha256-f5e1d13****d2de0b.sig
 ```
 
+
+Metadata:
+
+```json
+  {
+    "containerimage.descriptor": {
+      "mediaType": "application/vnd.oci.image.index.v1+json",
+      "digest": "sha256:7f694e5***d784c",
+      "size": 856
+    },
+    "containerimage.digest": "sha256:7f694e***784c",
+    "image.name": "ghcr.io/alundiak/devops-experiments:main"
+  }
+```
 
 
 ## Other Docker commands
