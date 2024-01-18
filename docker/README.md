@@ -81,6 +81,18 @@ Metadata:
 ```
 
 
+### Chaek available tags
+
+```sh
+curl -H "Authorization: Bearer YOUR_GITHUB_TOKEN" https://ghcr.io/v2/alundiak/devops-experiments/tags/list
+```
+
+or
+
+```sh
+curl -H "Authorization: Bearer YOUR_GITHUB_TOKEN" https://ghcr.io/v2/alundiak/devops-experiments/tags/list | jq .
+```
+
 ### How to use my deployed image?
 
 
