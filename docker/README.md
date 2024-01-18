@@ -26,7 +26,10 @@ docker pull ghcr.io/your-github-username/your-image-name
 
 ## GitHub Actions deploy Docker image on GitHub registry
 
-Read => [Workflow commands for GitHub Actions](https://docs.github.com/en/enterprise-cloud@latest/actions/using-workflows/workflow-commands-for-github-actions)
+Read =>
+- [Workflow commands for GitHub Actions](https://docs.github.com/en/enterprise-cloud@latest/actions/using-workflows/workflow-commands-for-github-actions)
+- [Working with the Container registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry)
+- [GitHub Actions: Deprecating save-state and set-output commands](https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/)
 
 To be able to `pull` need to `docker login ghcr.io`.
 
@@ -81,7 +84,7 @@ Metadata:
 ```
 
 
-### Chaek available tags
+### Check available tags
 
 ```sh
 curl -H "Authorization: Bearer YOUR_GITHUB_TOKEN" https://ghcr.io/v2/alundiak/devops-experiments/tags/list
