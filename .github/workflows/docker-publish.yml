@@ -42,8 +42,10 @@ jobs:
       - name: Set Tags
         id: set_tags
         # run: echo "::set-output name=tags::$(date +'%Y%m%d%H%M%S')"
+        #   echo "TAGS=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
         run: |
-          echo "TAGS=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
+          TAGS=$(date +'%Y%m%d%H%M%S')
+          echo "TAGS=${TAGS}" >> $GITHUB_ENV
 
       # Install the cosign tool except on PR
       # https://github.com/sigstore/cosign-installer
