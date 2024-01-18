@@ -125,6 +125,7 @@ Using default tag: latest
 Error response from daemon: manifest unknown
 ```
 
+Not sure if it's related to GiyHub Packages issue with `unknown/unknown` - https://github.com/orgs/community/discussions/45969
 
 
 
@@ -132,11 +133,13 @@ Error response from daemon: manifest unknown
 
 ```sh
 docker build -t my-service:$(date +%s) --file Dockerfile .
+
 docker-compose build
 docker-compose up
 docker-compose up -d
 docker-compose up -d --force-recreate
 docker-compose down
+
 docker images
 docker image prune --force
 docker ps
@@ -144,6 +147,64 @@ docker ps -a
 docker network ls
 docker volume create --name=my_custom_folder_for_volume_data
 docker volume ls
+
+docker run -P ...
+#or
+docker run --publish-all ...
+# to publish all exposed ports to random ports
+
+docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' <container_id_or_name>
+
+docker info # to check your Docker environment to see if swarm mode is enabled. 
+# or 
+docker info | grep -i swarm # => active | inactive
+docker info | grep -i apparmor
+docker info | grep -i apparmor
+
+# "docker save" command provide as output "A tar archive containing all image layers and tags"
+docker save my-nodejs-image       
+# $ cowardly refusing to save to a terminal. Use the -o flag or redirect
+docker save my-nodejs-image -o my-image.tar
+# Create real tar file
+docker save ghcr.io/alundiak/devops-experiments -o my-ghcr-image.tar
+docker save postgres -o my-image.tar
+
+docker service rollback
+
+docker swarm init
+docker swarm join --token SWxxxKN-1-5nw**uefc 1x2.1x8.65.3:2xx7
+docker swarm leave # to leave the swarm and join another one.
+docker swarm ca # show certificate
+docker stack ls        # List stacks
+docker stack ps <stack-name>    # List services in the stack
+
+docker history postgres
+# LATEST layers from top, OLDEST layers at the bottom
+# IMAGE          CREATED        CREATED BY                                      SIZE      COMMENT
+# cb73dc89d410   3 days ago     CMD ["python" "app.py"]                         0B        buildkit.dockerfile.v0
+# <missing>      3 days ago     EXPOSE map[80/tcp:{}]                           0B        buildkit.dockerfile.v0
+# ....
+# <missing>      2 months ago   ENV PYTHON_GET_PIP_URL=https://github.com/py…   0B        buildkit.dockerfile.v0
+# ...
+# <missing>      7 days ago     /bin/sh -c set -eux;  apt-get update;  apt-g…   48.5MB    
+```
+
+Inside a Docker container:
+
+```sh
+ifconfig
+# or
+ip addr show
+# or
+hostname -i
+# or
+curl ifconfig.me
+# or
+wget -qO- ifconfig.me
+# or
+cat /etc/hosts
+# or
+cat /etc/hostname
 ```
 
 
