@@ -33,9 +33,11 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          file: ./Dockerfile # Specify your Dockerfile path
+          file: ./Dockerfile
           push: true
-          platforms: linux/amd64,linux/arm64 # Add more platforms if needed
+          platforms: linux/amd64,linux/arm64
           tags: |
             ${{ env.REGISTRY }}/alundiak/devops-experiments:latest
             ${{ env.REGISTRY }}/alundiak/devops-experiments:${{ github.sha }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
