@@ -6,6 +6,7 @@ Try:
 - [Multi-stage builds](https://docs.docker.com/build/building/multi-stage/)
 - [Understand permission requirements for Docker Desktop on Mac](https://docs.docker.com/desktop/mac/permission-requirements/)
 - [Using a matrix for your jobs](https://docs.github.com/en/actions/using-jobs/using-a-matrix-for-your-jobs)
+- [8 Top Docker Tips & Tricks for 2024](https://www.docker.com/blog/8-top-docker-tips-tricks-for-2024)
 
 ## Basic Docker image and container setup
 
