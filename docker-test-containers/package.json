@@ -4,8 +4,7 @@
   "description": "Testcontainers with Docker",
   "main": "src/test.js",
   "scripts": {
-    "start": "node server.js",
-    "test": "jest test.js",
+    "test": "jest src/test.js",
     "testWithDebug": "DEBUG=testcontainers* npm test"
   },
   "keywords": [],
