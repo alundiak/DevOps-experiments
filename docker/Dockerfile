@@ -3,7 +3,12 @@ FROM node:21-alpine
 WORKDIR /app
 
 COPY package.json ./
-RUN npm install
+
+# RUN npm install
+
+# Using cache mount for npm install, so unchanged packages aren’t downloaded every time
+RUN --mount=type=cache,target=/root/.npm npm install
+
 COPY server.js ./
 
 # COPY . .
