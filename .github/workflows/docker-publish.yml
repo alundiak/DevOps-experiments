@@ -121,7 +121,7 @@ jobs:
         # against the sigstore community Fulcio instance.
         run: echo "${TAGS}" | xargs -I {} cosign sign --yes {}@${DIGEST}
 
-      - name: Debugging Tags and Digest
-        run: |
-          echo "TAGS=${{ env.TAGS }}"
-          echo "DIGEST=${{ env.DIGEST }}"
+      # - name: Debugging Tags and Digest
+      #   run: |
+      #     echo "TAGS=${{ env.TAGS }}"
+      #     echo "DIGEST=${{ env.DIGEST }}"
