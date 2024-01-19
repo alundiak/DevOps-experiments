@@ -5,6 +5,7 @@ Try:
 
 - [Multi-stage builds](https://docs.docker.com/build/building/multi-stage/)
 - [Understand permission requirements for Docker Desktop on Mac](https://docs.docker.com/desktop/mac/permission-requirements/)
+- [Using a matrix for your jobs](https://docs.github.com/en/actions/using-jobs/using-a-matrix-for-your-jobs)
 
 ## Basic Docker image and container setup
 
@@ -125,6 +126,9 @@ with:
   provenance: false
 ```
 But then GitHub Package doesn't have any platform at all. Although I was able finally to pull package with actual tag `main`.
+
+Not sure but maybe it's [docker/build-push-action](https://github.com/docker/build-push-action)-related problem
+
 
 ## Other Docker commands
 
