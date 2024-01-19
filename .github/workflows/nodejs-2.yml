@@ -6,13 +6,14 @@ on:
       - "node-js-2/**"
     branches:
       - main
+  # workflow_dispatch:
 
 jobs:
   subdirectory2-job:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Run subdirectory2 workflow steps
         run: |
           npm ci 
