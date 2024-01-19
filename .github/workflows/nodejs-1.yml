@@ -11,6 +11,11 @@ on:
 jobs:
   subdirectory1-job:
     runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: ./node-js-1/
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
