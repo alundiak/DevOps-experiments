@@ -1,0 +1,19 @@
+name: NodeJS project 1 build and test
+
+on:
+  push:
+    paths:
+      - "node-js-2/**"
+    branches:
+      - main
+
+jobs:
+  subdirectory2-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Run subdirectory2 workflow steps
+        run: |
+          npm ci 
+          npm test

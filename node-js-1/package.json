@@ -1,0 +1,15 @@
+{
+  "name": "@lundiak/node-js-1",
+  "version": "1.0.0",
+  "description": "Folder 1 for GitHub Actions YAML experiments",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
