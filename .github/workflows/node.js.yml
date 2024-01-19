@@ -31,9 +31,8 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-        # cache: 'npm'
-        cache: 'npm'
-        cache-dependency-path: './docker-test-containers/'
-        
+        cache: 'npm' # when no 'cache-dependency-path' then commenting this line helps to fix build
+        cache-dependency-path: './docker-test-containers/' # when omitted then build fail
+
     - run: npm ci
     - run: npm run testWithDebug

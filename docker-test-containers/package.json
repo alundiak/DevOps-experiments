@@ -2,7 +2,7 @@
   "name": "@lundiak/docker-test-containers",
   "version": "1.0.0",
   "description": "Testcontainers with Docker",
-  "main": "test.js",
+  "main": "src/test.js",
   "scripts": {
     "start": "node server.js",
     "test": "jest test.js",
