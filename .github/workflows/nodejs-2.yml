@@ -1,4 +1,4 @@
-name: NodeJS project 1 build and test
+name: NodeJS project 2 build and test
 
 on:
   push:
