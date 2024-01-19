@@ -4,7 +4,7 @@
   "description": "Folder 2 for GitHub Actions YAML experiments",
   "main": "index.js",
   "scripts": {
-    "test": "node test.js"
+    "test": "mocha test.js"
   },
   "keywords": [],
   "author": "",
