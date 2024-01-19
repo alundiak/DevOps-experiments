@@ -112,9 +112,19 @@ Using default tag: latest
 Error response from daemon: manifest unknown
 ```
 
-Not sure if it's related to GiyHub Packages issue with `unknown/unknown` - https://github.com/orgs/community/discussions/45969
+Not sure if it's related to GitHub Packages issue with `unknown/unknown` - https://github.com/orgs/community/discussions/45969
 
 
+https://github.com/docker/build-push-action/issues/820
+
+Used `provenance` under `uses: docker/build-push-action`
+
+```yaml
+with:
+  push: true
+  provenance: false
+```
+But then GitHub Package doesn't have any platform at all. Although I was able finally to pull package with actual tag `main`.
 
 ## Other Docker commands
 
