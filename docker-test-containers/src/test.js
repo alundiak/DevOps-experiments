@@ -23,11 +23,13 @@ describe("Customer Repository", () => {
   it("should create and return multiple customers", async () => {
     const customer1 = { id: 1, name: "John Doe" };
     const customer2 = { id: 2, name: "Jane Doe" };
+    const customer3 = { id: 3, name: "Andrii Doe" };
 
     await createCustomer(postgresClient, customer1);
     await createCustomer(postgresClient, customer2);
+    await createCustomer(postgresClient, customer3);
 
     const customers = await getCustomers(postgresClient);
-    expect(customers).toEqual([customer1, customer2]);
+    expect(customers).toEqual([customer1, customer2, customer3]);
   });
 });
