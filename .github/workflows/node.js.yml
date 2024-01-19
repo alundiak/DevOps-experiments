@@ -32,6 +32,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         # cache: 'npm'
+        cache: 'npm'
+        cache-dependency-path: './docker-test-containers/'
     - run: |
         npm ci
         npm run testWithDebug
