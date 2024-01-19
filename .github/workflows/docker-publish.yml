@@ -96,6 +96,7 @@ jobs:
         with:
           context: ./docker/
           push: ${{ github.event_name != 'pull_request' }}
+          provenance: false # with intention to avoid "unknown/unknown"
           tags: ${{ steps.meta.outputs.tags }}
           # tags: ${{ steps.set_tags.outputs.tags }} # bad
           labels: ${{ steps.meta.outputs.labels }}
