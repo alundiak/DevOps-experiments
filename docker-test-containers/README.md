@@ -7,7 +7,7 @@ Testcontainers with Docker
 `DEBUG=testcontainers* npm test`
 
 
-## Troubleshooting
+## `working-directory` vs `setup-node` and `cache-dependency-path` issue
 
 Looks like `actions/setup-node` with `cache` property causes issue:
 
@@ -17,3 +17,7 @@ Sources:
 - https://stackoverflow.com/questions/68639588/github-actions-dependencies-lock-file-is-not-found-in-runners-path
 - https://github.com/actions/setup-node/issues/706
 - https://dev.to/imomaliev/til-fix-error-dependencies-lock-file-is-not-found-ade
+
+So, `actions/setup-node@v3` config `cache-dependency-path` matters
+
+Although, still don't get why `cache-dependency-path` isn't equal by default value of `working-directory` (if that provided)...
