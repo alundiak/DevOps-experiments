@@ -14,7 +14,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
       - run: ls -la
-      - run: which bash
-      - run: which sh
+      - run: which bash # /usr/bin/bash
+      - run: which sh # /usr/bin/sh
+      
+      - name: Debug
+        run: |
+          ls -l
+          ls -l /github/workspace
+
       - name: Using my custom GitHub action
         uses: alundiak/devops-gha@main
+      - run: docker images
