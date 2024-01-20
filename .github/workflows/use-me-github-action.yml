@@ -1,4 +1,4 @@
-name: Just use my custom GitHub action
+name: Using my custom GitHub action
 
 # on: [push]
 on:
