@@ -1,0 +1,19 @@
+name: Just use my custom GitHub action
+
+# on: [push]
+on:
+  # push:
+  #   branches: ["main"]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        
+      - name: Using my custom GitHub action
+        uses: alundiak/devops-gha@main
+      
