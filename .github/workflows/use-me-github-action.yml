@@ -13,15 +13,17 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      - run: ls -la
-      - run: which bash # /usr/bin/bash
-      - run: which sh # /usr/bin/sh
       
-      - name: Debug
-        run: |
-          ls -l
-          ls -l /github/workspace
+      - name: Where Am I?
+        run: ls -la
 
+      - name: Debug /github/workspace
+        run: ls -la /github/workspace
+
+      - run: which sh # => /usr/bin/sh on GitHub action env
+      - run: which bash # => /usr/bin/bash on GitHub action env
+      
       - name: Using my custom GitHub action
         uses: alundiak/devops-gha@main
+        
       - run: docker images
