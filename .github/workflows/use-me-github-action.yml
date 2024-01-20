@@ -16,4 +16,3 @@ jobs:
         
       - name: Using my custom GitHub action
         uses: alundiak/devops-gha@main
-      
