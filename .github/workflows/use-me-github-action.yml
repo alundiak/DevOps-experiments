@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-        
+      - run: ls -la
+      - run: which bash
+      - run: which sh
       - name: Using my custom GitHub action
         uses: alundiak/devops-gha@main
