@@ -20,6 +20,9 @@ jobs:
       - name: Debug /
         run: ls -la /
 
+      - name: Debug env
+        run: env
+
       - run: which sh # => /usr/bin/sh on GitHub action env
       - run: which bash # => /usr/bin/bash on GitHub action env
       
