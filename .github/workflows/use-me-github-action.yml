@@ -28,7 +28,7 @@ jobs:
       
       - run: docker images
 
-      - name: Using my custom GitHub action
+      - name: USING MY CUSTOM GITHUB ACTION
         uses: alundiak/devops-gha@main
 
       - run: docker images
