@@ -24,10 +24,8 @@ jobs:
       - run: which bash # => /usr/bin/bash on GitHub action env
       
       - run: docker images
-      
+
       - name: Using my custom GitHub action
         uses: alundiak/devops-gha@main
-        with:
-            context: './'
 
       - run: docker images
