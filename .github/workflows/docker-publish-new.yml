@@ -94,7 +94,8 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: |
             maintainer=${{ github.actor }}
-            org.opencontainers.image.description=${{ env.IMAGE_DESCRIPTION }}
+            manifest:org.opencontainers.image.description= Manifest Description
+            index:org.opencontainers.image.description= Index Description
           annotations: ${{ steps.meta.outputs.annotations }}
           build-args: |
             VERSION=${{ env.VERSION }}
