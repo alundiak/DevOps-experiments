@@ -99,8 +99,7 @@ jobs:
             COMMIT=${{ github.sha }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
-
-          # outputs: type=image,name=target # NEW For me (causes fallback to docker.io)
+          # outputs: type=image,name=target # NEW for me, but for some reason it causes fallback to docker.io
 
       # Sign the resulting Docker image digest except on PRs.
       # This will only write to the public Rekor transparency log when the Docker
