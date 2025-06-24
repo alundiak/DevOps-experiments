@@ -57,6 +57,9 @@ jobs:
       #   #   echo "TAGS=${TAGS}" >> $GITHUB_ENV
       #   #   echo "::set-output name=tags::${TAGS}"
 
+      - name: Clear Sigstore TUF cache
+        run: rm -rf ~/.sigstore
+
       # Install the cosign tool except on PR
       # https://github.com/sigstore/cosign-installer
       - name: Install cosign
