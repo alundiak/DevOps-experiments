@@ -104,7 +104,8 @@ jobs:
             COMMIT=${{ github.sha }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
-          outputs: type=image,name=target # NEW for me
+          # NEW for me
+          outputs: type=image,name=target,annotation-index.org.opencontainers.image.description=My multi-arch image
 
       # Sign the resulting Docker image digest except on PRs.
       # This will only write to the public Rekor transparency log when the Docker
