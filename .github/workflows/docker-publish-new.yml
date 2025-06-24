@@ -77,9 +77,9 @@ jobs:
             maintainer=${{ github.actor }}
           annotations: |
             org.opencontainers.image.description=${{ env.IMAGE_DESCRIPTION }}
-        env:
-          DOCKER_METADATA_ANNOTATIONS_LEVELS: manifest,index
-          # this is new for me
+        # env:
+        #   DOCKER_METADATA_ANNOTATIONS_LEVELS: manifest,index
+        # this is new for me
 
       # Build and push Docker image with Buildx (don't push on PR)
       # https://github.com/docker/build-push-action
