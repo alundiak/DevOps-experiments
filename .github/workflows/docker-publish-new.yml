@@ -96,7 +96,7 @@ jobs:
           platforms: linux/amd64,linux/arm64 # TRIED before
           provenance: false # Disable provenance to avoid unknown/unknown
           sbom: false # Disable sbom to avoid unknown/unknown
-          outputs: type=image,name=target # NEW For me
+          # outputs: type=image,name=target # NEW For me (causes fallback to docker.io)
 
       # Sign the resulting Docker image digest except on PRs.
       # This will only write to the public Rekor transparency log when the Docker
