@@ -9,15 +9,15 @@ name: Build, test and push Docker image to GitHub Packages.
 on:
   # schedule:
   #   - cron: '25 3 * * *'
-  # push:
-  #   branches: ["main"]
-  #   tags: ["v*.*.*"]
+  push:
+    # branches: ["main"]
+    tags: ["v*.*.*"]
   # pull_request:
   #   branches: ["main"]
   workflow_dispatch: # added by me
 
 env:
-  # Use docker.io for Docker Hub if empty
+  # Uses docker.io for Docker Hub if empty
   REGISTRY: ghcr.io
   # github.repository as <account>/<repo>
   IMAGE_NAME: ${{ github.repository }}
