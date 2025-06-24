@@ -1,3 +1,4 @@
+# Base context of this file created by GitHub templates. I created it Jan-2024
 name: Build Docker img & Publish to GHCR
 
 # This workflow uses actions that are not certified by GitHub.
@@ -8,13 +9,12 @@ name: Build Docker img & Publish to GHCR
 on:
   # schedule:
   #   - cron: '37 15 * * *'
-  push:
-    # branches: ["main"]
-    # Publish semver tags as releases.
-    tags: ["v*.*.*"]
+  # push:
+  #   branches: ["main"]
+  #   tags: ["v*.*.*"]
   # pull_request:
   #   branches: ["main"]
-  workflow_dispatch:
+  workflow_dispatch: # added by me
 
 env:
   # Use docker.io for Docker Hub if empty
@@ -65,6 +65,10 @@ jobs:
         with:
           cosign-release: "v2.1.1"
 
+      # SUGGESTED by ChatGPT
+      #
+      #
+
       - name: Bootstrap Sigstore trust root (isolated)
         if: github.event_name != 'pull_request'
         run: |
@@ -78,6 +82,10 @@ jobs:
           TAGS="${{ steps.meta.outputs.tags }}"
           DIGEST="${{ steps.build-and-push.outputs.digest }}"
           echo "$TAGS" | xargs -I {} cosign sign --yes {}@"$DIGEST"
+
+      #
+      #
+      # SUGGESTED by ChatGPT
 
       # Set up BuildKit Docker container builder to be able to build
       # multi-platform images and export cache
