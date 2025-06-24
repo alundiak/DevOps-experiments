@@ -96,7 +96,9 @@ jobs:
           sbom: false # Disable sbom to avoid unknown/unknown
           platforms: linux/amd64,linux/arm64 # TRIED before
           tags: ${{ steps.meta.outputs.tags }}
-          annotations: ${{ steps.meta.outputs.annotations }}
+          annotations: |
+            ${{ steps.meta.outputs.annotations }}
+            org.opencontainers.image.description=HACK
           build-args: |
             VERSION=${{ env.VERSION }}
             COMMIT=${{ github.sha }}
