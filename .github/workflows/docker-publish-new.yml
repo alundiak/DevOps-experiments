@@ -76,6 +76,7 @@ jobs:
           labels: |
             maintainer=${{ github.actor }}
             org.opencontainers.image.description=${{ env.IMAGE_DESCRIPTION }}
+          description: ${{ env.IMAGE_DESCRIPTION }}
         env:
           DOCKER_METADATA_ANNOTATIONS_LEVELS: manifest,index
           # this is new for me
