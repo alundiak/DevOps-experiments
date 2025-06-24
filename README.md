@@ -12,6 +12,16 @@ So this is docker image pushed as from `ghcr.io` and shown as package on GitHub 
 
 ![img1](./_images/img1.png)
 
+Next issue was to "fight" two different descriptions for package as main and per-arch packages descriptions. Still not sure how to create separate description for different archs.
+
+![img2](./_images/img2.png)
+
+![img3](./_images/img3.png)
+
+Documentation:
+
+- https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry
+
 ## Kubernetes
 
 TBD
