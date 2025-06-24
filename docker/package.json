@@ -1,7 +1,7 @@
 {
   "name": "@lundiak/devops-experiments",
-  "version": "1.0.0",
-  "description": "DevOp Experiments",
+  "version": "24.0.0",
+  "description": "DevOps Experiments",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
