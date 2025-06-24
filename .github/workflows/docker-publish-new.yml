@@ -98,7 +98,7 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           annotations: |
             ${{ steps.meta.outputs.annotations }}
-            org.opencontainers.image.description=HACK
+            org.opencontainers.image.description=Per-arch image description for each variant
           build-args: |
             VERSION=${{ env.VERSION }}
             COMMIT=${{ github.sha }}
