@@ -76,7 +76,9 @@ jobs:
           labels: |
             maintainer=${{ github.actor }}
             org.opencontainers.image.description=${{ env.IMAGE_DESCRIPTION }}
-          description: ${{ env.IMAGE_DESCRIPTION }}
+          annotations: |
+            manifest:org.opencontainers.image.description=Description for arch-specific images
+            index:org.opencontainers.image.description=Description for multi-arch manifest
         env:
           DOCKER_METADATA_ANNOTATIONS_LEVELS: manifest,index
           # this is new for me
