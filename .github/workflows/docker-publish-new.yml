@@ -21,7 +21,7 @@ env:
   REGISTRY: ghcr.io
   # github.repository as <account>/<repo>
   IMAGE_NAME: ${{ github.repository }}
-  IMAGE_DESCRIPTION: My DevOps experiment with Docker image and GitHub Container Registry
+  IMAGE_DESCRIPTION: My Docker image on GitHub Container Registry
   VERSION: ${{ github.ref_name || 'latest' }}
 
 jobs:
@@ -92,10 +92,6 @@ jobs:
           sbom: false # Disable sbom to avoid unknown/unknown
           platforms: linux/amd64,linux/arm64 # TRIED before
           tags: ${{ steps.meta.outputs.tags }}
-          labels: |
-            maintainer=${{ github.actor }}
-            manifest:org.opencontainers.image.description= Manifest Description
-            index:org.opencontainers.image.description= Index Description
           annotations: ${{ steps.meta.outputs.annotations }}
           build-args: |
             VERSION=${{ env.VERSION }}
