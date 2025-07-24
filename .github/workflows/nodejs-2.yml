@@ -4,8 +4,6 @@ on:
   push:
     paths:
       - "node-js-2/**"
-    branches:
-      - main
   workflow_dispatch:
 
 jobs:
