@@ -11,7 +11,7 @@ on:
 jobs:
   subdirectory2-job:
     runs-on: ubuntu-latest
-    
+
     defaults:
       run:
         working-directory: ./node-js-2/
@@ -19,10 +19,10 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      
-      - name: Run subdirectory2 workflow steps  
+
+      - name: Run subdirectory2 workflow steps
         uses: actions/setup-node@v4
         with:
-          node-version: 21
-      - run: npm ci 
+          node-version: 24
+      - run: npm ci
       - run: npm test

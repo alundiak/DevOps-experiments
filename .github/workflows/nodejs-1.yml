@@ -6,7 +6,7 @@ on:
       - "node-js-1/**"
     branches:
       - main
-  # workflow_dispatch:    
+  # workflow_dispatch:
 
 jobs:
   subdirectory1-job:
@@ -19,10 +19,10 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      
-      - name: Run subdirectory1 workflow steps  
+
+      - name: Run subdirectory1 workflow steps
         uses: actions/setup-node@v4
         with:
-          node-version: 21
-      - run: npm ci 
+          node-version: 23
+      - run: npm ci
       - run: npm test
