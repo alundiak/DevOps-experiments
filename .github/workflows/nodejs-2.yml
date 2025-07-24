@@ -6,7 +6,7 @@ on:
       - "node-js-2/**"
     branches:
       - main
-  # workflow_dispatch:
+  workflow_dispatch:
 
 jobs:
   subdirectory2-job:
