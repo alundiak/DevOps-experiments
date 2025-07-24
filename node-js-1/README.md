@@ -2,10 +2,14 @@
 
 Note:
 
-To test basic JavaScript with NodeJS:
+In past there was a basic JavaScript test with Jest aka `jest test.js` which was executed within adjacent npm script `npm test`. But when I normalized to NodeJS v24 in July-2025, `jest` still couldn't handle ESM without `jest.config.js`.
 
-- `node test.js`
+I didn't want to install additional NodeJS packages I gave it up, and used `node:test` tool.
 
-To test basic JavaScript with Jest
+So to test basic JavaScript function directly with NodeJS:
 
-- `jest test.js` which is executed within adjacent npm script `npm test`.
+- `node --test ./test.js`
+
+or
+
+- `npm test`

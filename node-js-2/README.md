@@ -1,11 +1,16 @@
-# Folder 2 for experimental NodeJS project
+# Folder 1 for experimental NodeJS project
 
 Note:
 
-To test basic JavaScript with NodeJS:
+In past there was a basic JavaScript test with Mocha aka `mocha test.js` which was executed within adjacent npm script `npm test`.
+And it was working (using `describe()` in `test.js`).
 
-- `node test.js`
+I didn't want to install additional NodeJS packages I gave it up, and used `node:test` tool.
 
-To test basic JavaScript with Mocha (using remote `npx`)
+So to test basic JavaScript function directly with NodeJS:
 
-- `npx mocha test.js` which is executed within adjacent npm script `npm test`.
+- `node --test ./test.js`
+
+or
+
+- `npm test`

@@ -5,12 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "jest test.js"
+    "test": "node --test ./test.js"
   },
   "keywords": [],
   "author": "Andrii Lundiak",
-  "license": "ISC",
-  "devDependencies": {
-    "jest": "^30.0.5"
-  }
+  "license": "ISC"
 }

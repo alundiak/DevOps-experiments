@@ -1,8 +1,7 @@
+import test from "node:test";
 import assert from "node:assert";
-import { add } from "./index";
+import { add } from "./index.js";
 
-describe("Add() test", () => {
-  it("should add", () => {
-    assert(add(2, 2) === 4);
-  });
+test("Add() test", () => {
+  assert.strictEqual(add(2, 2), 4);
 });

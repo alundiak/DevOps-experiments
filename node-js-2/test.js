@@ -1,8 +1,7 @@
-const assert = require('node:assert');
-const { multiply } = require('./index');
+import test from "node:test";
+import assert from "node:assert";
+import { multiply } from "./index.js";
 
-describe('Multiply() test', () => {
-  it('should multiply', () => {
-    assert(multiply(3, 2) === 6);
-  });
-})
+test("Multiply() test", () => {
+  assert.strictEqual(multiply(2, 3), 6);
+});
