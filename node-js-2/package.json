@@ -1,15 +1,13 @@
 {
-  "name": "@lundiak/node-js-2",
+  "name": "@alundiak/node-js-2",
   "version": "1.0.0",
   "description": "Folder 2 for GitHub Actions YAML experiments",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "mocha test.js"
+    "test": "npx mocha test.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "mocha": "^10.2.0"
-  }
+  "author": "Andrii Lundiak",
+  "license": "ISC"
 }

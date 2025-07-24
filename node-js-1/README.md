@@ -1,5 +1,4 @@
-Folder 1 for experimental NodeJS project
-===
+# Folder 1 for experimental NodeJS project
 
 Note:
 
@@ -7,4 +6,6 @@ To test basic JavaScript with NodeJS:
 
 - `node test.js`
 
-To test basic JavaScript with Jest `"test": "jest test.js"` => `npm test` will work.
+To test basic JavaScript with Jest
+
+- `jest test.js` which is executed within adjacent npm script `npm test`.
