@@ -4,7 +4,9 @@ on:
   push:
     paths:
       - "node-js-1/**"
-  workflow_dispatch:
+    branches:
+      - main
+  workflow_dispatch: {}
 
 jobs:
   subdirectory1-job:
