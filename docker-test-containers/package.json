@@ -1,5 +1,5 @@
 {
-  "name": "@lundiak/docker-test-containers",
+  "name": "@alundiak/docker-test-containers",
   "version": "1.0.0",
   "description": "Testcontainers with Docker",
   "main": "src/test.js",
@@ -11,13 +11,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@testcontainers/postgresql": "^10.28.0",
     "pg": "^8.11.3"
   },
   "devDependencies": {
-    "@testcontainers/postgresql": "^10.6.0",
-    "@types/jest": "^29.5.11",
-    "@types/mocha": "^10.0.6",
+    "@types/jest": "^29.5.14",
+    "@types/mocha": "^10.0.10",
     "jest": "^29.7.0",
-    "mocha": "^10.2.0"
+    "mocha": "^10.8.2"
   }
 }
